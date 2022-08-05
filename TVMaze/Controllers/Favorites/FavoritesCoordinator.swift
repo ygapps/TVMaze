@@ -18,8 +18,7 @@ class FavoritesCoordinator: Coordinator {
     }
     
     func start() {
-        let favoritesViewController = FavoritesViewController()
-        favoritesViewController.coordinator = self
+        let favoritesViewController = FavoritesViewController(coordinator: self, viewModel: FavoritesViewModel())
         navigationController.setViewControllers([favoritesViewController], animated: true)
     }
 }

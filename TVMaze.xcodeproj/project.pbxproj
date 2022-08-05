@@ -40,6 +40,14 @@
 		E8DF66CD289D5549003B355C /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66CC289D5549003B355C /* EpisodesTableViewCell.swift */; };
 		E8DF66D0289D8A55003B355C /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66CF289D8A55003B355C /* EpisodeViewController.swift */; };
 		E8DF66D2289D8AB5003B355C /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66D1289D8AB5003B355C /* EpisodeViewModel.swift */; };
+		E8DF66D5289DB14D003B355C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E8DF66D4289DB14D003B355C /* Realm */; };
+		E8DF66D7289DB14D003B355C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E8DF66D6289DB14D003B355C /* RealmSwift */; };
+		E8DF66D9289DB1AC003B355C /* LikedShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66D8289DB1AC003B355C /* LikedShow.swift */; };
+		E8DF66DB289DB832003B355C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66DA289DB832003B355C /* FavoritesViewModel.swift */; };
+		E8DF66DD289DC5B2003B355C /* SearchPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66DC289DC5B2003B355C /* SearchPerson.swift */; };
+		E8DF66DF289DC5E6003B355C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66DE289DC5E6003B355C /* Person.swift */; };
+		E8DF66E3289DD076003B355C /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66E2289DD076003B355C /* PersonViewController.swift */; };
+		E8DF66E5289DD155003B355C /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66E4289DD155003B355C /* PersonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +102,12 @@
 		E8DF66CC289D5549003B355C /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		E8DF66CF289D8A55003B355C /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		E8DF66D1289D8AB5003B355C /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
+		E8DF66D8289DB1AC003B355C /* LikedShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedShow.swift; sourceTree = "<group>"; };
+		E8DF66DA289DB832003B355C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		E8DF66DC289DC5B2003B355C /* SearchPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPerson.swift; sourceTree = "<group>"; };
+		E8DF66DE289DC5E6003B355C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		E8DF66E2289DD076003B355C /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		E8DF66E4289DD155003B355C /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,8 @@
 			files = (
 				E8DF66C3289C7353003B355C /* RxSwift in Frameworks */,
 				E8DF66C1289C7353003B355C /* RxCocoa in Frameworks */,
+				E8DF66D5289DB14D003B355C /* Realm in Frameworks */,
+				E8DF66D7289DB14D003B355C /* RealmSwift in Frameworks */,
 				E8DF66B7289BE62B003B355C /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +209,7 @@
 		E8B829BF289B1C0600C23D27 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E8DF66E0289DD058003B355C /* Person */,
 				E8DF66CE289D8A27003B355C /* Episode */,
 				E8DF66C4289CD4E4003B355C /* Series */,
 				E8B829E0289BD74D00C23D27 /* Search */,
@@ -209,6 +226,8 @@
 				E8DF66BD289C5CA1003B355C /* SearchViewModel.swift */,
 				E8DF66C7289CD817003B355C /* SeriesViewModel.swift */,
 				E8DF66D1289D8AB5003B355C /* EpisodeViewModel.swift */,
+				E8DF66DA289DB832003B355C /* FavoritesViewModel.swift */,
+				E8DF66E4289DD155003B355C /* PersonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -234,8 +253,11 @@
 			isa = PBXGroup;
 			children = (
 				E8B829CA289B264500C23D27 /* Show.swift */,
-				E8B829CC289B3BB900C23D27 /* SearchShow.swift */,
 				E8B829CE289B3E1D00C23D27 /* Episode.swift */,
+				E8DF66D8289DB1AC003B355C /* LikedShow.swift */,
+				E8DF66DE289DC5E6003B355C /* Person.swift */,
+				E8B829CC289B3BB900C23D27 /* SearchShow.swift */,
+				E8DF66DC289DC5B2003B355C /* SearchPerson.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +322,14 @@
 			path = Episode;
 			sourceTree = "<group>";
 		};
+		E8DF66E0289DD058003B355C /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				E8DF66E2289DD076003B355C /* PersonViewController.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -320,6 +350,8 @@
 				E8DF66B6289BE62B003B355C /* SDWebImage */,
 				E8DF66C0289C7353003B355C /* RxCocoa */,
 				E8DF66C2289C7353003B355C /* RxSwift */,
+				E8DF66D4289DB14D003B355C /* Realm */,
+				E8DF66D6289DB14D003B355C /* RealmSwift */,
 			);
 			productName = TVMaze;
 			productReference = E8B8298B289B16BE00C23D27 /* TVMaze.app */;
@@ -396,6 +428,7 @@
 			packageReferences = (
 				E8DF66B5289BE62B003B355C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				E8DF66BF289C7353003B355C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E8DF66D3289DB14D003B355C /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = E8B8298C289B16BE00C23D27 /* Products */;
 			projectDirPath = "";
@@ -448,7 +481,10 @@
 				E8B829D3289B4EB600C23D27 /* TabCoordinator.swift in Sources */,
 				E8B829CB289B264500C23D27 /* Show.swift in Sources */,
 				E8DF66D2289D8AB5003B355C /* EpisodeViewModel.swift in Sources */,
+				E8DF66DF289DC5E6003B355C /* Person.swift in Sources */,
 				E8B829CF289B3E1D00C23D27 /* Episode.swift in Sources */,
+				E8DF66DD289DC5B2003B355C /* SearchPerson.swift in Sources */,
+				E8DF66D9289DB1AC003B355C /* LikedShow.swift in Sources */,
 				E8B829C4289B1CA700C23D27 /* Router.swift in Sources */,
 				E8DF66CB289D4E01003B355C /* Extensions.swift in Sources */,
 				E8B829DB289B53CB00C23D27 /* FavoritesCoordinator.swift in Sources */,
@@ -459,9 +495,12 @@
 				E8B829D1289B4DF700C23D27 /* AppCoordinator.swift in Sources */,
 				E8DF66C6289CD75C003B355C /* SeriesViewController.swift in Sources */,
 				E8B829D8289B514A00C23D27 /* HomeViewController.swift in Sources */,
+				E8DF66DB289DB832003B355C /* FavoritesViewModel.swift in Sources */,
 				E8B829D6289B511E00C23D27 /* HomeCoordinator.swift in Sources */,
+				E8DF66E3289DD076003B355C /* PersonViewController.swift in Sources */,
 				E8DF66C8289CD817003B355C /* SeriesViewModel.swift in Sources */,
 				E8B8298F289B16BE00C23D27 /* AppDelegate.swift in Sources */,
+				E8DF66E5289DD155003B355C /* PersonViewModel.swift in Sources */,
 				E8DF66D0289D8A55003B355C /* EpisodeViewController.swift in Sources */,
 				E8B82991289B16BE00C23D27 /* SceneDelegate.swift in Sources */,
 			);
@@ -809,6 +848,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		E8DF66D3289DB14D003B355C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -826,6 +873,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8DF66BF289C7353003B355C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		E8DF66D4289DB14D003B355C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DF66D3289DB14D003B355C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		E8DF66D6289DB14D003B355C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DF66D3289DB14D003B355C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

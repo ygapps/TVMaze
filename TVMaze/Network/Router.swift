@@ -13,6 +13,8 @@ enum Router {
     case showsDetails(seriesId: UInt)
     case episodes(seriesId: UInt)
     case episodeDetails(episodeId: UInt)
+    case person(searchQuery: String)
+    case personDetails(personId: UInt)
     
     var scheme: String {
         return "https"
@@ -34,6 +36,10 @@ enum Router {
             return "/shows/\(seriesId)/episodes"
         case .episodeDetails(let episodeId):
             return "/episodes/\(episodeId)"
+        case .person:
+            return "/search/people"
+        case .personDetails(let personId):
+            return "/people/\(personId)"
         }
     }
     
@@ -43,11 +49,9 @@ enum Router {
             return [URLQueryItem(name: "page", value: "\(page)")]
         case .search(let searchQuery):
             return [URLQueryItem(name: "q", value: searchQuery)]
-        case .showsDetails:
-            return []
-        case .episodes:
-            return []
-        case .episodeDetails:
+        case .person(let searchQuery):
+            return [URLQueryItem(name: "q", value: searchQuery)]
+        case .showsDetails, .episodes, .episodeDetails, .personDetails:
             return []
         }
     }

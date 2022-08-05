@@ -32,4 +32,9 @@ class SearchCoordinator: Coordinator {
         let episodeViewController = EpisodeViewController(episodeId: episodeId, viewModel: EpisodeViewModel())
         self.navigationController.pushViewController(episodeViewController, animated: true)
     }
+    
+    func showPerson(personId: UInt) {
+        let personViewController = PersonViewController(personId: personId, viewModel: PersonViewModel())
+        self.navigationController.pushViewController(personViewController, animated: true)
+    }
 }

@@ -102,4 +102,13 @@ class ShowCollectionViewCell: UICollectionViewCell {
         
         self.showNameLabel.text = episode.episodeName
     }
+    
+    public func configure(person: Person) {
+
+        if let posterMediumURL = person.personImage?.medium, let posterURL = URL(string: posterMediumURL) {
+            self.posterImageView.sd_setImage(with: posterURL, placeholderImage: UIImage(systemName: "sparkles.tv.fill"))
+        }
+        
+        self.showNameLabel.text = person.personName
+    }
 }

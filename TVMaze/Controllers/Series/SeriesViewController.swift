@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SeriesViewController: UIViewController {
 
@@ -75,7 +76,11 @@ class SeriesViewController: UIViewController {
         return label
     }()
     
-    private var isFavorite = false
+    private var isFavorite: Bool {
+        let realmDB = try! Realm()
+        let likedShow = realmDB.object(ofType: LikedShow.self, forPrimaryKey: seriesId)
+        return likedShow != nil
+    }
     
     init(seriesId: UInt, viewModel: SeriesViewModel) {
         self.viewModel = viewModel
@@ -106,6 +111,14 @@ class SeriesViewController: UIViewController {
         self.view.addSubview(showGenresLabel)
         self.view.addSubview(showSummaryLabel)
         self.view.addSubview(showEpisodesTableView)
+        
+        if isFavorite {
+            likeBarButtonItem.image =  UIImage(systemName: "heart.fill",
+                                               withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        } else {
+            likeBarButtonItem.image =  UIImage(systemName: "heart",
+                                               withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        }
     }
     
     private func configureLayout() {
@@ -189,13 +202,31 @@ class SeriesViewController: UIViewController {
     // MARK: Actions
     
     @objc private func like(_ sender: UIBarButtonItem) {
+        let realmDB = try! Realm()
+
         if isFavorite {
-            sender.image =  UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))
-        } else {
+            guard let likedShow = realmDB.object(ofType: LikedShow.self, forPrimaryKey: seriesId) else {
+                return
+            }
+            
+            try! realmDB.write {
+                realmDB.delete(likedShow)
+            }
+            
             sender.image =  UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+
+        } else {
+            
+            let likedShow = LikedShow(likedShowId: Int(seriesId),
+                                      likedShowName: viewModel.seriesDetails?.showName,
+                                      likedShowImageURL: viewModel.seriesDetails?.showImage?.medium)
+            
+            try! realmDB.write {
+                realmDB.add(likedShow)
+            }
+            
+            sender.image =  UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))
         }
-        
-        self.isFavorite.toggle()
     }
 }
 
