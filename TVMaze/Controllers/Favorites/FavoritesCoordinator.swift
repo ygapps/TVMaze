@@ -21,4 +21,10 @@ class FavoritesCoordinator: Coordinator {
         let favoritesViewController = FavoritesViewController(coordinator: self, viewModel: FavoritesViewModel())
         navigationController.setViewControllers([favoritesViewController], animated: true)
     }
+    
+    func showSeries(seriesId: UInt) {
+        let seriesViewController = SeriesViewController(seriesId: seriesId, viewModel: SeriesViewModel())
+        seriesViewController.coordinator = self
+        self.navigationController.pushViewController(seriesViewController, animated: true)
+    }
 }

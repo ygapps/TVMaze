@@ -226,7 +226,7 @@ public class AppLocker: UIViewController {
         // Depending the iOS version we'll need to choose the policy we are able to use
         if #available(iOS 9.0, *) {
             // iOS 9+ users with Biometric and Passcode verification
-            policy = .deviceOwnerAuthentication
+            policy = .deviceOwnerAuthenticationWithBiometrics
         }
         
         var err: NSError?

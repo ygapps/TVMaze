@@ -94,4 +94,8 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
             viewModel.remove(seriesId: viewModel.likedShows[indexPath.row].likedShowId)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.showSeries(seriesId: UInt(viewModel.likedShows[indexPath.row].likedShowId))
+    }
 }

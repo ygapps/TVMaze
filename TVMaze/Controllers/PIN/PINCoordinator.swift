@@ -27,7 +27,6 @@ class PINCoordinator: Coordinator {
         options.image = UIImage(systemName: "person")!
         options.title = "TVMaze"
         options.subtitle = "Enter PIN"
-        options.isSensorsEnabled = true
 
         AppLocker.present(with: .create, and: options, over: self.navigationController)
     }
@@ -37,7 +36,6 @@ class PINCoordinator: Coordinator {
         options.image = UIImage(systemName: "person")!
         options.title = "TVMaze"
         options.subtitle = "Enter PIN"
-        options.isSensorsEnabled = true
 
         AppLocker.present(with: .deactive, and: options, over: self.navigationController)
     }
