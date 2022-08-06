@@ -48,6 +48,12 @@
 		E8DF66DF289DC5E6003B355C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66DE289DC5E6003B355C /* Person.swift */; };
 		E8DF66E3289DD076003B355C /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66E2289DD076003B355C /* PersonViewController.swift */; };
 		E8DF66E5289DD155003B355C /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66E4289DD155003B355C /* PersonViewModel.swift */; };
+		E8DF66E8289E5821003B355C /* PINCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66E7289E5821003B355C /* PINCoordinator.swift */; };
+		E8DF66EA289E5833003B355C /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66E9289E5833003B355C /* PINViewController.swift */; };
+		E8DF66F8289E7042003B355C /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = E8DF66F7289E7042003B355C /* Valet */; };
+		E8DF66FC289E708E003B355C /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66F9289E708E003B355C /* AppLocker.swift */; };
+		E8DF66FD289E708E003B355C /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF66FA289E708E003B355C /* UI.swift */; };
+		E8DF66FE289E73AE003B355C /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DF66FB289E708E003B355C /* AppLocker.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +114,11 @@
 		E8DF66DE289DC5E6003B355C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E8DF66E2289DD076003B355C /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		E8DF66E4289DD155003B355C /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		E8DF66E7289E5821003B355C /* PINCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINCoordinator.swift; sourceTree = "<group>"; };
+		E8DF66E9289E5833003B355C /* PINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
+		E8DF66F9289E708E003B355C /* AppLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocker.swift; sourceTree = "<group>"; };
+		E8DF66FA289E708E003B355C /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		E8DF66FB289E708E003B355C /* AppLocker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppLocker.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +129,7 @@
 				E8DF66C3289C7353003B355C /* RxSwift in Frameworks */,
 				E8DF66C1289C7353003B355C /* RxCocoa in Frameworks */,
 				E8DF66D5289DB14D003B355C /* Realm in Frameworks */,
+				E8DF66F8289E7042003B355C /* Valet in Frameworks */,
 				E8DF66D7289DB14D003B355C /* RealmSwift in Frameworks */,
 				E8DF66B7289BE62B003B355C /* SDWebImage in Frameworks */,
 			);
@@ -213,6 +225,7 @@
 				E8DF66CE289D8A27003B355C /* Episode */,
 				E8DF66C4289CD4E4003B355C /* Series */,
 				E8B829E0289BD74D00C23D27 /* Search */,
+				E8DF66E6289E57D7003B355C /* PIN */,
 				E8B829D9289B538C00C23D27 /* Favorites */,
 				E8B829D4289B509D00C23D27 /* Home */,
 			);
@@ -330,6 +343,18 @@
 			path = Person;
 			sourceTree = "<group>";
 		};
+		E8DF66E6289E57D7003B355C /* PIN */ = {
+			isa = PBXGroup;
+			children = (
+				E8DF66F9289E708E003B355C /* AppLocker.swift */,
+				E8DF66FB289E708E003B355C /* AppLocker.xib */,
+				E8DF66FA289E708E003B355C /* UI.swift */,
+				E8DF66E7289E5821003B355C /* PINCoordinator.swift */,
+				E8DF66E9289E5833003B355C /* PINViewController.swift */,
+			);
+			path = PIN;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +377,7 @@
 				E8DF66C2289C7353003B355C /* RxSwift */,
 				E8DF66D4289DB14D003B355C /* Realm */,
 				E8DF66D6289DB14D003B355C /* RealmSwift */,
+				E8DF66F7289E7042003B355C /* Valet */,
 			);
 			productName = TVMaze;
 			productReference = E8B8298B289B16BE00C23D27 /* TVMaze.app */;
@@ -429,6 +455,7 @@
 				E8DF66B5289BE62B003B355C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				E8DF66BF289C7353003B355C /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E8DF66D3289DB14D003B355C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				E8DF66F6289E7041003B355C /* XCRemoteSwiftPackageReference "Valet" */,
 			);
 			productRefGroup = E8B8298C289B16BE00C23D27 /* Products */;
 			projectDirPath = "";
@@ -447,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8B8299B289B16C200C23D27 /* LaunchScreen.storyboard in Resources */,
+				E8DF66FE289E73AE003B355C /* AppLocker.xib in Resources */,
 				E8B82998289B16C200C23D27 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,9 +523,13 @@
 				E8B829D1289B4DF700C23D27 /* AppCoordinator.swift in Sources */,
 				E8DF66C6289CD75C003B355C /* SeriesViewController.swift in Sources */,
 				E8B829D8289B514A00C23D27 /* HomeViewController.swift in Sources */,
+				E8DF66FC289E708E003B355C /* AppLocker.swift in Sources */,
 				E8DF66DB289DB832003B355C /* FavoritesViewModel.swift in Sources */,
+				E8DF66EA289E5833003B355C /* PINViewController.swift in Sources */,
 				E8B829D6289B511E00C23D27 /* HomeCoordinator.swift in Sources */,
 				E8DF66E3289DD076003B355C /* PersonViewController.swift in Sources */,
+				E8DF66FD289E708E003B355C /* UI.swift in Sources */,
+				E8DF66E8289E5821003B355C /* PINCoordinator.swift in Sources */,
 				E8DF66C8289CD817003B355C /* SeriesViewModel.swift in Sources */,
 				E8B8298F289B16BE00C23D27 /* AppDelegate.swift in Sources */,
 				E8DF66E5289DD155003B355C /* PersonViewModel.swift in Sources */,
@@ -856,6 +888,14 @@
 				kind = branch;
 			};
 		};
+		E8DF66F6289E7041003B355C /* XCRemoteSwiftPackageReference "Valet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/square/Valet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -883,6 +923,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8DF66D3289DB14D003B355C /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		E8DF66F7289E7042003B355C /* Valet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DF66F6289E7041003B355C /* XCRemoteSwiftPackageReference "Valet" */;
+			productName = Valet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

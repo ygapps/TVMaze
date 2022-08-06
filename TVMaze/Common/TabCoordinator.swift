@@ -15,6 +15,7 @@ class TabCoordinator {
     var homeCoordinator: HomeCoordinator
     var searchCoordinator: SearchCoordinator
     var favoritesCoordinator: FavoritesCoordinator
+    var pinCoordinator: PINCoordinator
     
     init(tabController: UITabBarController) {
         self.tabController = tabController
@@ -22,6 +23,7 @@ class TabCoordinator {
         self.homeCoordinator = HomeCoordinator(navigationController: UINavigationController())
         self.searchCoordinator = SearchCoordinator(navigationController: UINavigationController())
         self.favoritesCoordinator = FavoritesCoordinator(navigationController: UINavigationController())
+        self.pinCoordinator = PINCoordinator(navigationController: UINavigationController())
     }
     
     func start() {
@@ -29,6 +31,7 @@ class TabCoordinator {
         homeCoordinator.start()
         searchCoordinator.start()
         favoritesCoordinator.start()
+        pinCoordinator.start()
 
         let homeController = homeCoordinator.navigationController
         homeController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "tv"), selectedImage: nil)
@@ -41,8 +44,12 @@ class TabCoordinator {
         let favoritesController = favoritesCoordinator.navigationController
         favoritesController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), selectedImage: nil)
         childCoordinators.append(favoritesCoordinator)
+        
+        let pinController = pinCoordinator.navigationController
+        pinController.tabBarItem = UITabBarItem(title: "PIN", image: UIImage(systemName: "gear"), selectedImage: nil)
+        childCoordinators.append(pinCoordinator)
     
-        tabController.setViewControllers([homeController, searchController, favoritesController], animated: true)
+        tabController.setViewControllers([homeController, searchController, favoritesController, pinController], animated: true)
         tabController.tabBar.isTranslucent = true
     }
 }

@@ -100,6 +100,18 @@ class SeriesViewController: UIViewController {
         configureViewModel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isFavorite {
+            likeBarButtonItem.image =  UIImage(systemName: "heart.fill",
+                                               withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        } else {
+            likeBarButtonItem.image =  UIImage(systemName: "heart",
+                                               withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        }
+    }
+    
     private func configureViews() {
         self.navigationItem.largeTitleDisplayMode = .never
         self.navigationItem.setRightBarButton(likeBarButtonItem, animated: true)
@@ -111,14 +123,6 @@ class SeriesViewController: UIViewController {
         self.view.addSubview(showGenresLabel)
         self.view.addSubview(showSummaryLabel)
         self.view.addSubview(showEpisodesTableView)
-        
-        if isFavorite {
-            likeBarButtonItem.image =  UIImage(systemName: "heart.fill",
-                                               withConfiguration: UIImage.SymbolConfiguration(scale: .large))
-        } else {
-            likeBarButtonItem.image =  UIImage(systemName: "heart",
-                                               withConfiguration: UIImage.SymbolConfiguration(scale: .large))
-        }
     }
     
     private func configureLayout() {

@@ -38,7 +38,7 @@ class PersonViewController: UIViewController {
     }()
     
     private lazy var personViewButton: UIButton = {
-        var configuration = UIButton.Configuration.tinted() // 1
+        var configuration = UIButton.Configuration.filled() // 1
         configuration.cornerStyle = .large // 2
         configuration.baseForegroundColor = .label
         configuration.buttonSize = .large
